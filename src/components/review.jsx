@@ -25,22 +25,18 @@ const Reviews = () => {
   return (
     <div className="mb-10">   
         <div className="flex flex-col md:flex-row items-center justify-center pt-10 pb-5">
-          <div className="md:w-2/3 mt-50 ml-10 mb-50">
+          <div className="md:w-full mt-5 md:mt-0 md:text-left ml-10">
             <p className="text-4xl text-amber-900 font-bold">Happy Customers</p>
             <p className="text-amber-600 mt-3">Read our happy customers' reviews</p>
           </div>
           
-          <div className="md:w-1/3 ">
-            <div className="mr-10 text-right">
-                <button
-                    className="bg-amber-900 px-2 py-1 text-white rounded hover:bg-amber-700"
-                >
+          <div className="md:w-full mt-5 md:mt-0 md:text-right mr-10">
+                <button className="bg-amber-900 px-2 py-1 text-white rounded hover:bg-amber-700">
                     Show All
                 </button>
-            </div>
           </div>
         </div>
-        <div className="relative flex items-center overflow-hidden py-50">
+        <div className="relative flex items-center overflow-hidden py-5 md:py-10">
             <button
                 className={`absolute inset-y-0 left-0 bg-gray-200 opacity-50 hover:opacity-75 transition duration-300 ${
                 scrollIndex === 0 && 'hidden'
@@ -51,7 +47,7 @@ const Reviews = () => {
             </button>
             <div className="flex space-x-4 overflow-x-auto">
                 {reviews.slice(scrollIndex * 3, (scrollIndex + 1) * 3).map((review) => (
-                    <div key={reviews.id} className="flex-none w-96 ml-10">
+                    <div key={reviews.id} className="flex-none w-80 md:w-96 ml-4 md:ml-10">
                         <div className="border p-2">
                         <div className="flex items-center mb-2 text-yellow-400">
                             {Array.from({ length: review.rate }, (_, i) => (
